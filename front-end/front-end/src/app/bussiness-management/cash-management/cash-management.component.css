@@ -1,0 +1,45 @@
+.wrapper{
+    padding: 0 30px 0 30px;
+    margin-top: 20px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: white;
+    box-shadow: 5px 5px 5px rgb(145, 145, 145);
+    margin-bottom: 20px;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.date{
+    line-height: 80px;
+}
+
+.pagination{
+    margin-left: 480px;
+}
+
+.add{
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.add p{
+    margin-bottom: 0;
+    font-size: 20px;
+    color: rgb(55, 55, 255);
+}
+
+.add mat-icon{
+    margin-top: -3px;
+    font-size: 25px;
+    color: rgb(55, 55, 255);
+}

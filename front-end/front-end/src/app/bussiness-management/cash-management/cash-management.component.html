@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="wrapper">
+        <h1 style="text-align: center;">Bảng thống kê tiền mặt</h1>
+        <p style="text-align: center;"><i>Tháng 9/2020</i></p>
+        <table style="text-align: center;" class="table table-bordered">
+            <tr>
+                <td style="background-color: rgb(255, 227, 174);"><b>Ngày tháng</b></td>
+                <td style="background-color: rgb(255, 227, 174);"><b>Diễn giải</b></td>
+                <td style="background-color: rgb(255, 227, 174);"><b>Thu</b></td>
+                <td style="background-color: rgb(255, 227, 174);"><b>Chi</b></td>
+                <td style="background-color: rgb(255, 227, 174);"><b>Tồn quỹ</b></td>
+            </tr>
+            <tr *ngFor="let item of cashList">
+                <td><b>{{item.date}}</b></td>
+                <td>{{item.description}}</td>
+                <td>{{item.earn | format}}</td>
+                <td>{{item.paid | format}}</td>
+                <td style="color:red"><b>{{item.remain | format}}</b></td>
+            </tr>
+        </table>
+        <div class="add" (click)="updateCash()">
+            <mat-icon>monetization_on</mat-icon>
+            <p>Cập nhật tiền mặt cuối ngày</p>
+        </div>
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" (click)="minusCurrentPage()">Trước</a></li>
+            <li class="page-item">
+                <p class="page-link">{{currentPage+1}}</p>
+            </li>
+            <li class="page-item"><a class="page-link" (click)="addCurrentPage()">Sau</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <h1 *ngIf="data.edit">Sửa địa chỉ</h1>
+    <h1 *ngIf="!data.edit">Sửa địa chỉ</h1>
+    <form [formGroup]="formEditAddress" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn thành phố</mat-label>
+            <mat-select formControlName="city" ngModel (ngModelChange)="cityPicked($event)">
+                <mat-option *ngFor="let city of cityList" [value]="city.getName()">{{city.getName()}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn quận</mat-label>
+            <mat-select formControlName="district" ngModel (ngModelChange)="districtPicked($event)"
+                [disabled]="activateDistrict">
+                <mat-option *ngFor="let district of districtList" [value]="district.getName()">{{district.getName()}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn phường</mat-label>
+            <mat-select formControlName="ward" [disabled]="activateWard" #ward>
+                <mat-option *ngFor="let ward of wardList" [value]="ward.getName()">{{ward.getName()}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-12">
+            <mat-label>Nhập địa chỉ chi tiết</mat-label>
+            <input matInput placeholder="Số nhà 87 ngõ 94 Ngọc Khánh Ba Đình Hà Nội" autocomplete="off"
+                formControlName="address">
+            <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+    </div>
+    <button type="submit" class="btn btn-success">Lưu</button><br>
+    </form>
+</div>

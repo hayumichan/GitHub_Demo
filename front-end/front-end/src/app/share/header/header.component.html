@@ -1,0 +1,29 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img src="https://plqs-image.s3-ap-southeast-1.amazonaws.com/logo-plqs.png">
+  <span class="ginza"><b>PHỞ LÝ QUỐC SƯ ROYAL</b></span>
+  <span class="right-content"></span>
+  <div class="info">
+    <h2>Xin chào {{fullName}}</h2>
+    <div class="form-group">
+      <select>
+        <option *ngFor="let res of restaurant" [value]="res">{{res}}</option>
+      </select>
+    </div>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logOut()">
+      <mat-icon>logout</mat-icon>
+      <span>Đăng xuất</span>
+    </button>
+    <button mat-menu-item routerLink="/home/quan-ly-tai-khoan">
+      <mat-icon>build</mat-icon>
+      <span>Quản lý tài khoản</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

@@ -1,0 +1,75 @@
+.profile-card{
+    text-align: center;
+    padding: 0 0 20px 20px;
+}
+
+.profile-card a{
+    color: rgb(38, 38, 255);
+}
+
+.profile-card a:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+img{
+    border-radius: 50%;
+    height: 150px;
+    width: 160px;
+    margin-bottom: 10px;
+}
+
+.wrapper{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h1{
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(0, 0, 0) !important;
+}
+
+::ng-deep .mat-form-field-label {
+    color: rgb(0 0 0 / 60%);
+}
+
+::ng-deep .mat-form-field-underline::before{
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.field{
+    margin-left: 120px;
+}
+
+.submit{
+    margin: 20px 280px 20px;
+}
+
+.add{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.add p{
+    margin-bottom: 0;
+    font-size: 20px;
+    color: rgb(55, 55, 255);
+}
+
+.add mat-icon{
+    margin-top: -3px;
+    font-size: 25px;
+    color: rgb(55, 55, 255);
+}

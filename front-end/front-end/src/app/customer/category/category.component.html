@@ -1,0 +1,22 @@
+<div class="cart-button">
+    <button mat-fab [matBadge]="cartItem" matBadgePosition="before" matBadgeColor="accent" routerLink="/home/gio-hang">
+        <mat-icon>local_grocery_store</mat-icon>
+    </button>
+</div>
+<div class="wrapper">
+    <div class="menu">
+        <h1>Chọn loại sản phẩm</h1>
+        <mat-icon>restaurant</mat-icon>
+        <table>
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let item of category|display:row">
+                    <div class="category">
+                        <img [src]="item.getImg()">
+                        <p><b>{{item.getName()}}</b></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<app-footer></app-footer>

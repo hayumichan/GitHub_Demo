@@ -1,0 +1,92 @@
+.cart-button{
+    display: flex;
+    left: 1200px;
+    top: 550px;
+    justify-content: center;
+    width: 150px;
+    z-index: 1000;
+    position: fixed;
+}
+
+.cart-button button{
+    background-color: #E98219;
+}
+.wrapper{
+    padding: 20px 30px 20px 30px;
+    width: 100%;
+    background-color: rgb(255, 245, 227);
+}
+
+.menu{
+    border: 1px solid rgb(167, 167, 167);
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+}
+
+.menu h1{
+    font-size: 46px;
+    font-weight: bold;
+}
+
+.menu mat-icon{
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.wrap{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.item{
+    width: 80%;
+    border: 1px solid rgb(150, 150, 150);
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.item img{
+    width: 100%;
+}
+
+.item:hover{
+    border: 2px solid #E98219;
+}
+
+.item p{
+    color: #E98219;
+    margin-top: 10px;
+}
+
+.btn{
+    height: 50px;
+    margin-right: 20px;
+    color: white;
+    background-color: #E98219;
+    border-radius: 40px;
+}
+
+.menu input{
+    height: 20px;
+}
+
+.filter{
+    display: flex; 
+    padding-right: 70px; 
+    padding-left: 100px;
+    margin-bottom: 40px;
+}
+
+nav{
+    margin-left: 500px;
+}
+
+
+mat-label{
+    color: black
+}
+
+.arrange{
+    margin-bottom: 20px;
+    margin-left: 910px;
+}

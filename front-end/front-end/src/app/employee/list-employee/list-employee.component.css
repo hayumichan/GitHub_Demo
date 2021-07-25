@@ -1,0 +1,90 @@
+h1{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.fix{
+    position: fixed;
+    z-index: 1000;
+    background-color: #fafafa;
+}
+
+.search{
+    position: relative;
+    font-size: 26px;
+}
+
+.ds{
+    font-size: 26px;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.mat-row:hover{
+    background-color: rgb(228, 227, 227);
+    cursor: pointer;
+}
+
+mat-label{
+    color: black;
+}
+
+.filter{
+    margin-top: -20px;
+}
+
+.button-add{
+    margin-left: 1115px;
+    font-size: 18px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 50px;
+    background-color: #E98219;
+}
+
+.btnFilter{
+    margin-left: 1080px;
+    background-color: #E98219;
+    color: white;
+}
+
+table{
+    width: 100%;
+    margin-left: 21px;
+}
+
+.table{
+    position: relative;
+    top: 130px;
+}
+
+.red{
+    background-color: #fcf8e3;
+}
+
+.red:hover{
+    background-color: rgb(211, 211, 211);
+}
+
+hr{
+    border-top: 1px solid #b3b1b1;
+}
+
+.active{
+    color: green;
+}
+
+.inactive{
+    color: red;
+}
+
+mat-paginator{
+    margin-top: -80px;
+}
+
+.pagination{
+    margin-top: 270px;
+    margin-left: 480px;
+}

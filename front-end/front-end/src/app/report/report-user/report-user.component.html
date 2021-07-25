@@ -1,0 +1,23 @@
+<div class="report-user">
+    <div class="filter">
+        <mat-form-field appearance="standard">
+            <mat-label>Từ ngày - đến ngày</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date" [(ngModel)] = "from">
+              <input matEndDate placeholder="End date" [(ngModel)] = "to">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Chọn</mat-label>
+            <mat-select [(ngModel)] = "pick">
+                <mat-option value="day">Theo ngày</mat-option>
+                <mat-option value="month">Theo tháng</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button type="button" class="btn btn-success submit" (click)="filter()">Search</button></div>
+        <hr>
+<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" style="width: 100%; display: block">
+</highcharts-chart>
+</div>

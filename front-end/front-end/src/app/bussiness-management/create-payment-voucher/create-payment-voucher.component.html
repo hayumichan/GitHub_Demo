@@ -1,0 +1,124 @@
+<div class="container">
+    <div class="wrapper">
+        <h1 style="text-align: center;">Phiếu chi</h1>
+        <p style="text-align: center;"><i>Ngày {{date}}</i></p>
+        <form [formGroup]="formCreateVoucher" (ngSubmit)="onSubmit()">
+            <table style="text-align: left; width: 100%;">
+                <tr>
+                    <td>Họ tên người nhận:</td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nhập họ<span style="color: red">*</span></mat-label>
+                            <input matInput placeholder="Hoàng" autocomplete="off" formControlName="firstName">
+                            <mat-error *ngIf="formCreateVoucher.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nhập tên đệm<span style="color: red">*</span></mat-label>
+                            <input matInput placeholder="Việt" autocomplete="off" formControlName="middleName">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nhập tên<span style="color: red">*</span></mat-label>
+                            <input matInput placeholder="Tùng" autocomplete="off" formControlName="lastName">
+                            <mat-error *ngIf="formCreateVoucher.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Chọn thành phố</mat-label>
+                            <mat-select formControlName="city" ngModel (ngModelChange)="cityPicked($event)"
+                                formControlName="city">
+                                <mat-option *ngFor="let city of cityList" [value]="city.getName()">{{city.getName()}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Chọn quận</mat-label>
+                            <mat-select formControlName="district" ngModel (ngModelChange)="districtPicked($event)"
+                                [disabled]="activateDistrict" formControlName="district">
+                                <mat-option *ngFor="let district of districtList" [value]="district.getName()">
+                                    {{district.getName()}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Chọn phường</mat-label>
+                            <mat-select formControlName="ward" [disabled]="activateWard" #ward formControlName="ward">
+                                <mat-option *ngFor="let ward of wardList" [value]="ward.getName()">{{ward.getName()}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="3">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nhập địa chỉ</mat-label>
+                            <input matInput placeholder="Số nhà 87 ngõ 94 Ngọc Khánh Ba Đình Hà Nội" autocomplete="off"
+                                formControlName="address">
+                            <mat-icon matSuffix>home</mat-icon>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lý do chi:</td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Lý do chi<span style="color: red">*</span></mat-label>
+                            <mat-select formControlName="type">
+                                <mat-option value="Chi tiền NCC">Chi tiền NCC</mat-option>
+                                <mat-option value="Gửi ngân hàng">Gửi ngân hàng</mat-option>
+                                <mat-option value="Trả tiền vay">Trả tiền vay</mat-option>
+                                <mat-option value="Chi thuế">Chi thuế</mat-option>
+                                <mat-option value="Chi lương">Chi lương</mat-option>
+                                <mat-option value="Phí khác">Phí khác</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td style="text-align: center;">Tổng số tiền:</td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Tổng chi<span style="color: red">*</span></mat-label>
+                            <input matInput placeholder="Tùng" autocomplete="off" formControlName="amount"
+                                type="number">
+                            <mat-error *ngIf="formCreateVoucher.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chứng từ gốc</td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nhập mã</mat-label>
+                            <input matInput placeholder="12ABJ425S4G" autocomplete="off" formControlName="document">
+                            <mat-icon matSuffix>receipt</mat-icon>
+                        </mat-form-field>
+                    </td>
+                    <td style="text-align: center;">Đã thanh toán:</td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Đã thanh toán<span style="color: red">*</span></mat-label>
+                            <input matInput placeholder="Tùng" autocomplete="off" formControlName="paid" type="number">
+                            <mat-error *ngIf="formCreateVoucher.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <div class="button">
+                <button type="submit" class="btn btn-success submit" [disabled]="formCreateVoucher.invalid">Lưu</button>
+                <button type="button" class="btn btn-danger" (click)="resetForm()">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

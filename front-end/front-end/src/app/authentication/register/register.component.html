@@ -1,0 +1,102 @@
+<mat-toolbar color="white">
+    <img class="logo" src="assets/picture/logo-plqs.png">
+    <span class="lqs ginza"><b>PHỞ LÝ QUỐC SƯ ROYAL</b></span>
+</mat-toolbar>
+<div class="signin-form">
+    <h1>Đăng kí</h1>
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+    <div class="row signin-row">
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Nhập họ</mat-label>
+            <input matInput placeholder="Hoàng" autocomplete="off" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Nhập tên đệm</mat-label>
+            <input matInput placeholder="Việt" autocomplete="off" formControlName="middleName">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Nhập tên</mat-label>
+            <input matInput placeholder="Tùng" autocomplete="off" formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <div class="row signin-row">
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập tên đăng nhập</mat-label>
+            <input matInput placeholder="tunghv@example.com" autocomplete="off" formControlName="username">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="white" class="col-lg-6">
+            <mat-label>Nhập mật khẩu</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="row signin-row">
+    <mat-form-field appearance="fill" class="col-lg-6">
+        <mat-label>Nhập CMT hoặc căn cước</mat-label>
+        <input matInput placeholder="013607257" autocomplete="off" formControlName="identification">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="col-lg-6">
+        <mat-label>Nhập email</mat-label>
+        <input matInput placeholder="tunghvhe130498@fpt.edu.vn" autocomplete="off" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+</div>
+    <div class="row signin-row">
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn thành phố</mat-label>
+            <mat-select formControlName="city" ngModel (ngModelChange)="cityPicked($event)" formControlName="city">
+                <mat-option *ngFor="let city of cityList" [value]="city.getName()">{{city.getName()}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn quận</mat-label>
+            <mat-select formControlName="district" ngModel (ngModelChange)="districtPicked($event)"
+                [disabled]="activateDistrict" formControlName="district">
+                <mat-option *ngFor="let district of districtList" [value]="district.getName()">{{district.getName()}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn phường</mat-label>
+            <mat-select formControlName="ward" [disabled]="activateWard" #ward formControlName="ward">
+                <mat-option *ngFor="let ward of wardList" [value]="ward.getName()">{{ward.getName()}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row signin-row">
+        <mat-form-field appearance="fill" class="col-lg-12">
+            <mat-label>Nhập địa chỉ</mat-label>
+            <input matInput placeholder="Số nhà 87 ngõ 94 Ngọc Khánh Ba Đình Hà Nội" autocomplete="off" formControlName="address">
+            <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="row signin-row">
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Nhập số điện thoại</mat-label>
+            <input matInput placeholder="0961033146" autocomplete="off" formControlName="phone">
+            <mat-icon matSuffix>call</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Giới tính</mat-label>
+            <mat-select formControlName="sex">
+                <mat-option value="Nam">Nam</mat-option>
+                <mat-option value="Nữ">Nữ</mat-option>
+                <mat-option value="Khác">Khác</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-4">
+            <mat-label>Chọn ngày sinh</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <br>
+    <button type="submit" class="login">Đăng kí</button><br>
+    <button type="button" routerLink="/dang-nhap" class="login">Quay lại đăng nhập</button>
+    </form>
+</div>

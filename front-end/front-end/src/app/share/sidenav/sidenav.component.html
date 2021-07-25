@@ -1,0 +1,12 @@
+<mat-nav-list> 
+    <h2 matSubheader>Mục lục</h2>
+    <a mat-list-item routerLink="/home/danh-sach-nhan-vien" *ngIf="isOwner"><span style="margin-right: 5px;"><mat-icon>account_box</mat-icon></span>Quản lý nhân viên</a>
+    <a mat-list-item routerLink="/home/danh-sach-tai-khoan" *ngIf="isAdmin"><span style="margin-right: 5px;"><mat-icon>account_box</mat-icon></span>Quản lý tài khoản</a>
+    <a mat-list-item routerLink="/home/bao-cao-nguoi-dung" *ngIf="isKeToan || isOwner"><span style="margin-right: 5px;"><mat-icon>analytics</mat-icon></span>Báo cáo</a> 
+    <a mat-list-item routerLink="/home/san-pham" *ngIf="isOwner"><span style="margin-right: 5px;"><mat-icon>analytics</mat-icon></span>Quản lý sản phẩm</a>  
+    <a mat-list-item routerLink="/home/swagger" *ngIf="isAdmin"><span style="margin-right: 5px;"><mat-icon>api</mat-icon></span>Swagger</a>  
+    <a mat-list-item routerLink="/home/thu-ngan" *ngIf="isThuNgan"><span style="margin-right: 5px;"><mat-icon>monetization_on</mat-icon></span>Thu Ngân</a>
+    <a mat-list-item routerLink="/home/trang-chu" *ngIf="isCustomer"><span style="margin-right: 5px;"><mat-icon>home</mat-icon></span>Trang chủ</a>
+    <a mat-list-item routerLink="/home/gio-hang" *ngIf="isCustomer"><span style="margin-right: 5px;"><mat-icon>shopping_cart</mat-icon></span>Giỏ hàng</a>
+    <a mat-list-item routerLink="/home/thuc-don" *ngIf="isCustomer"><span style="margin-right: 5px;"><mat-icon>restaurant_menu</mat-icon></span>Thực đơn</a>
+</mat-nav-list>

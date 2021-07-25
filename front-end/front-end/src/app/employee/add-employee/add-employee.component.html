@@ -1,0 +1,126 @@
+<div class="container">
+    <h1>Thêm nhân viên</h1>
+    <form [formGroup]="addEmpForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Nhập họ<span style="color: red">*</span></mat-label>
+                <input matInput placeholder="Hoàng" autocomplete="off" formControlName="firstName">
+                <mat-error *ngIf="addEmpForm.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Nhập tên đệm</mat-label>
+                <input matInput placeholder="Việt" autocomplete="off" formControlName="middleName">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Nhập tên<span style="color: red">*</span></mat-label>
+                <input matInput placeholder="Tùng" autocomplete="off" formControlName="lastName">
+                <mat-error *ngIf="addEmpForm.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Chọn thành phố</mat-label>
+                <mat-select formControlName="city" ngModel (ngModelChange)="cityPicked($event)">
+                    <mat-option *ngFor="let city of cityList" [value]="city.getName()">{{city.getName()}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Chọn quận</mat-label>
+                <mat-select formControlName="district" ngModel (ngModelChange)="districtPicked($event)"
+                    [disabled]="activateDistrict">
+                    <mat-option *ngFor="let district of districtList" [value]="district.getName()">{{district.getName()}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Chọn phường</mat-label>
+                <mat-select formControlName="ward" [disabled]="activateWard" #ward>
+                    <mat-option *ngFor="let ward of wardList" [value]="ward.getName()">{{ward.getName()}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-12">
+                <mat-label>Nhập địa chỉ chi tiết</mat-label>
+                <input matInput placeholder="Số nhà 87 ngõ 94 Ngọc Khánh Ba Đình Hà Nội" autocomplete="off"
+                    formControlName="address">
+                <mat-icon matSuffix>home</mat-icon>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Nhập CMT hoặc căn cước<span style="color: red">*</span></mat-label>
+                <input matInput placeholder="tunghvhe130498@fpt.edu.vn" autocomplete="off" formControlName="identification">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="addEmpForm.controls['identification'].errors?.required">Vui lòng điền đầy đủ thông tin
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Nhập email<span style="color: red">*</span></mat-label>
+                <input matInput placeholder="tunghvhe130498@fpt.edu.vn" autocomplete="off" formControlName="email">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="addEmpForm.controls['email'].errors?.required">Vui lòng điền đầy đủ thông tin
+                </mat-error>
+                <mat-error *ngIf="addEmpForm.controls['email'].errors?.email">Email không hợp lệ</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Chọn nhà hàng<span style="color: red">*</span></mat-label>
+                <mat-select formControlName="restaurant">
+                    <mat-option value="1">Cơ sở 1</mat-option>
+                    <mat-option value="2">Cơ sở 2</mat-option>
+                    <mat-option value="3">Cơ sở 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Nhập số điện thoại<span style="color: red">*</span></mat-label>
+                <input matInput placeholder="0961033146" autocomplete="off" formControlName="phone">
+                <mat-icon matSuffix>call</mat-icon>
+                <mat-error *ngIf="addEmpForm.invalid">Vui lòng điền đầy đủ thông tin</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Giới tính</mat-label>
+                <mat-select formControlName="sex">
+                    <mat-option value="Nam">Nam</mat-option>
+                    <mat-option value="Nữ">Nữ</mat-option>
+                    <mat-option value="Khác">Khác</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-4">
+                <mat-label>Chọn ngày sinh</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row role">
+            <div class="col-lg-5">
+                <mat-selection-list [(ngModel)]="remainSelectedRoles" #existedRole name="remain"
+                    [ngModelOptions]="{standalone: true}">
+                    <mat-list-option *ngFor="let roles of remainRoles" [value]="roles">
+                        {{roles}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+            <div class="col-lg-2">
+                <button (click)="minusRoles()" type="button">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <br>
+                <button (click)="addRoles()" type="button">
+                    <mat-icon>arrow_forward</mat-icon>
+                </button>
+            </div>
+            <div class="col-lg-5">
+                <mat-selection-list [(ngModel)]="employeeSelectedRoles" #employeeRoles name="role"
+                    [ngModelOptions]="{standalone: true}">
+                    <mat-list-option *ngFor="let roles of employeRoles" [value]="roles">
+                        {{roles}}
+                    </mat-list-option>
+                </mat-selection-list>
+                <mat-error *ngIf="errorRole">Vui lòng chọn chức vụ</mat-error>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success submit" [disabled]="addEmpForm.invalid">Thêm nhân viên</button><br>
+    </form>
+</div>

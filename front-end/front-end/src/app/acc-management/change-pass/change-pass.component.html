@@ -1,0 +1,32 @@
+<div style="text-align: center">
+    <h1>Thay đổi mật khẩu</h1>
+    <form [formGroup]="formChangePass" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" color="white">
+            <mat-label>Nhập mật khẩu cũ</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="old-pass">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="white">
+            <mat-label>Nhập mật khẩu mới</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="new-pass">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="white">
+            <mat-label>Nhập lại mật khẩu</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirm">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button type="submit" class="login">Đổi mật khẩu</button><br>
+        <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+    </form>
+</div>
+

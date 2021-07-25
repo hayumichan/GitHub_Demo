@@ -1,0 +1,73 @@
+<div class="cart-button">
+    <button mat-fab [matBadge]="cartItem" matBadgePosition="before" matBadgeColor="accent" routerLink="/home/gio-hang">
+        <mat-icon>local_grocery_store</mat-icon>
+    </button>
+</div>
+<div class="wrapper">
+    <div class="menu">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                <div class="cart">
+                    <h1>{{product.getName()}}</h1>
+                    <h3>Giá: <span style="color: red">{{product.getPrice()|format}}</span></h3>
+                    <div class="form-check-inline" style="margin-left:12px">
+                        <span><p style="margin-right: 5px; margin-top: 10px">Số lượng: </p></span><input style="width: 100px;" type="number" min="1" class="form-control" [(ngModel)]="inputNumber">
+                    </div>
+                    <br><br>
+                    <button class="btn btn-success" style="margin-left: -12px" (click)="addToCart()">
+                        <mat-icon>shopping_cart</mat-icon>Thêm vào giỏ hàng
+                    </button>
+                </div>
+            </div>
+            <div class="right col-lg-8">
+                <h1 style="font-size: 30px; font-weight: 550;">Mô tả món ăn</h1>
+                <p style="text-align: left; font-size: 16px; line-height: 1.75;">{{product.getDescription()}}</p>
+                <h2 style="text-align: left;">Các món ăn liên quan</h2>
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide>
+                        <div class="slide">
+                            <div class="related-item">
+                                <img src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                                <h4 style="color: #E98219"><b>Phở bò tái chín</b></h4>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="slide">
+                            <div class="related-item">
+                                <img src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                                <h4 style="color: #E98219"><b>Phở bò tái chín</b></h4>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="slide">
+                            <div class="related-item">
+                                <img src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                                <h4 style="color: #E98219"><b>Phở bò tái chín</b></h4>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="slide">
+                            <div class="related-item">
+                                <img src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                                <h4 style="color: #E98219"><b>Phở bò tái chín</b></h4>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="slide">
+                            <div class="related-item">
+                                <img src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                                <h4 style="color: #E98219"><b>Phở bò tái chín</b></h4>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

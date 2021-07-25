@@ -1,0 +1,159 @@
+<div class="wrapper">
+    <div class="cart">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 style="font-size: 30px; font-weight: 500; margin-bottom: 40px;">Thông tin khách hàng</h1>
+                <table style="width: 90%;">
+                    <tr>
+                        <td>
+                            <p style="margin-top: -8px; font-size: 16px">Khách hàng:</p>
+                        </td>
+                        <td>
+                            <div class="form-group" style="margin-left: 10px">
+                                <input type="text" class="form-control" value="Hoàng Việt Tùng">
+                            </div>
+                        </td>
+                        <td>
+                            <p style="margin-top: -8px; font-size: 16px; margin-left: 20px">Số điện thoại:</p>
+                        </td>
+                        <td>
+                            <div class="form-group" style="margin-left: 10px">
+                                <input type="text" class="form-control" value="0961033146">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="margin-top: -8px; font-size: 16px">Địa chỉ nhận hàng:</p>
+                        </td>
+                        <td colspan="3">
+                            <div class="form-group" style="margin-left: 10px">
+                                <select class="custom-select">
+                                    <option value="">Số nhà 87 ngõ 94 Ngọc Khánh</option>
+                                    <option value="">Số nhà 21 ngõ 21 Giảng Võ</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="font-size: 16px">Thêm địa chỉ giao hàng</p>
+                        </td>
+                        <td colspan="3">
+                            <mat-expansion-panel style="margin-left: 10px;">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Thêm địa chỉ tại đây
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                        <td>
+                            <p style="margin-top: -8px; font-size: 16px">Địa chỉ nhận hàng:</p>
+                        </td>
+                        <td>
+                            <div class="form-group" style="margin-left: 10px">
+                                <select class="custom-select">
+                                    <option value="">Thành phố Hà Nội</option>
+                                    <option value="">Người khác</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select class="custom-select" [disabled]="isPickedCity">
+                                    <option value="">Quận Ba Đình</option>
+                                    <option value="">Người khác</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select class="custom-select" [disabled]="isPickedDistrict">
+                                    <option value="">Phường Giảng Võ</option>
+                                    <option value="">Người khác</option>
+                                </select>
+                            </div>
+                        </td>
+                    <tr>
+                        <td>
+                            <p style="margin-top: -8px; font-size: 16px">Địa chỉ chi tiết:</p>
+                        </td>
+                        <td colspan="3">
+                            <div class="form-group" style="margin-left: 10px">
+                                <input type="text" class="form-control">
+                            </div>
+                        </td>
+                        <br>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>
+                            <button class="btn">Thêm địa chỉ</button>
+                        </td>
+                    </tr>
+                    </mat-expansion-panel>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-4 buy">
+                <h1 class="total">Hoá đơn</h1>
+                <div style="float: left;">
+                    <img style="width: 60px; float: left"
+                        src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                    <div style="float: left; margin-left: 10px">
+                        <h2>Phở bò tái chín</h2>
+                        <p>Số lượng: 1</p>
+                    </div>
+                </div>
+                <div style="float: right; margin-top: 30px">
+                    <p style="color: red;">50.000 Đồng</p>
+                </div>
+                <hr style="clear: left">
+                <div style="float: left;">
+                    <img style="width: 60px; float: left"
+                        src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                    <div style="float: left; margin-left: 10px">
+                        <h2>Phở bò tái chín</h2>
+                        <p>Số lượng: 1</p>
+                    </div>
+                </div>
+                <div style="float: right; margin-top: 30px">
+                    <p style="color: red;">50.000 Đồng</p>
+                </div>
+                <hr style="clear: left">
+                <div style="float: left;">
+                    <img style="width: 60px; float: left"
+                        src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                    <div style="float: left; margin-left: 10px">
+                        <h2>Phở bò tái chín</h2>
+                        <p>Số lượng: 1</p>
+                    </div>
+                </div>
+                <div style="float: right; margin-top: 30px">
+                    <p style="color: red;">50.000 Đồng</p>
+                </div>
+                <hr style="clear: left">
+                <div style="float: left;">
+                    <img style="width: 60px; float: left"
+                        src="https://i.pinimg.com/originals/be/69/71/be6971349381f37f41b3a9eaadbe3eae.jpg">
+                    <div style="float: left; margin-left: 10px">
+                        <h2>Phở bò tái chín</h2>
+                        <p>Số lượng: 1</p>
+                    </div>
+                </div>
+                <div style="float: right; margin-top: 30px">
+                    <p style="color: red;">50.000 Đồng</p>
+                </div>
+                <hr style="clear: left">
+                <div style="text-align: right">
+                    <p><b>Giảm giá:</b></p>
+                    <p style="color: red;">-20.000 Đồng</p>
+                    <hr>
+                    <h1><b>Tổng cộng:</b></h1>
+                    <h2 style="color: red"><b>180.000 Đồng</b></h2>
+                </div>
+                <button class="btn">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

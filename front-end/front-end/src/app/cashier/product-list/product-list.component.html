@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <h1>Thực đơn</h1>
+    <div class="header">
+        <div class="form-check-inline">
+            <p style="width: 150px; margin-top: 15px; margin-right: 10px">Chọn theo:</p>
+            <select class="custom-select">
+                <option value="">Tất cả</option>
+                <option value="">Phở</option>
+                <option value="">Cơm</option>
+                <option value="">Mỳ</option>
+                <option value="">Lẩu</option>
+                <option value="">Đồ uống</option>
+                <option value="">Khác</option>
+            </select>
+        </div>
+        <hr style="margin-left: 10px; margin-right: 10px">
+        <table>
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let item of products|display:row">
+                    <div class="item" [ngClass]="{'out-of-stock': !item.getStatus()}" (click)="chooseItem(item)">
+                        <div class="stock-empty" *ngIf="!item.getStatus()"><p>Hết hàng</p></div>
+                        <img [src]="item.getImg()">
+                        <p><b>{{item.getName()}}</b></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

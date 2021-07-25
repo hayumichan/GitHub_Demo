@@ -1,0 +1,67 @@
+<div class="wrapper">
+    <div class="list-bill">
+        <div class="previous"><p><</p></div>
+        <div *ngFor="let bill of bills" class="bill" [ngClass]="{'active':bill.getIsAtive()}"
+            (click)="chooseBill(bill.getId())">
+            <p>{{bill.getId()}}</p>
+        </div>
+        <div class="next"><p>></p></div>
+    </div>
+    <div class="product">
+        <table style="width: 100%">
+            <tr *ngFor="let cart of carts">
+                <td><img style="width: 60px;" [src]="cart.getImg()">
+                </td>
+                <td>{{cart.getProductName()}}</td>
+                <td>
+                    <div class="form-check-inline">
+                        <button style="background-color: #E98219; color: white" class="btn"
+                            (click)="minus(cart.getProductId())">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                    </div>
+                    <div class="form-check-inline">
+                        <input style="width: 70px;" type="number" class="form-control" [value]="cart.getQuantity()"
+                            disabled>
+                    </div>
+                    <div class="form-check-inline">
+                        <button style="background-color: #E98219; color: white" class="btn"
+                            (click)="plus(cart.getProductId())">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </td>
+                <td>{{cart.getPrice()*cart.getQuantity()|format}}</td>
+                <td><button mat-icon-button color="warn" (click)="removeItem(cart.getProductId())">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="buttons-wrapper">
+        <hr>
+        <div class="sum">
+            <h1>Tổng</h1>
+            <p>{{sum|format}}</p>
+        </div>
+        <div class="buttons">
+            <button class="add" mat-raised-button (click)="addBill()">
+                <mat-icon inline=true>add_circle</mat-icon>
+                Thêm hóa đơn
+            </button>
+            <button class="print" mat-raised-button>
+                <mat-icon inline=true>local_printshop</mat-icon>
+                In hóa đơn
+            </button>
+            <button class="cancel" mat-raised-button color="warn" (click)="removeBill()">
+                <mat-icon inline=true>delete</mat-icon>
+                Hủy hóa đơn
+            </button>
+            <button class="pay" mat-raised-button style="color: black">
+                <mat-icon inline=true>monetization_on</mat-icon>
+                Thanh toán
+            </button>
+        </div>
+    </div>
+</div>

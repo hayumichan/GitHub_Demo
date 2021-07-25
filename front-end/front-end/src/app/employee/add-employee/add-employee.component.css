@@ -1,0 +1,51 @@
+.container{
+    padding-right: 50px;
+    padding-left: 80px;
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.col-lg-5 mat-selection-list{
+    border: 1px solid rgb(172, 172, 172);
+    min-height: 300px;
+}
+.col-lg-2{
+    text-align: center;
+}
+
+.col-lg-2 button{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.role{
+    width: 900px;
+    margin-left: 50px;
+}
+
+.submit{
+    margin: 20px 430px 20px;
+}
+
+.row{
+    margin-bottom: 7px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(0, 0, 0) !important;
+}
+
+::ng-deep .mat-form-field-label {
+    color: rgb(0 0 0 / 60%);
+}
+
+::ng-deep .mat-form-field-underline::before{
+    background-color: rgb(0, 0, 0) !important;
+}

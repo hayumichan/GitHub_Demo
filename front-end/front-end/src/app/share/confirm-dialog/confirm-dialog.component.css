@@ -1,0 +1,11 @@
+.button button{
+    width: 80px;
+}
+.button .btn-danger{
+    margin-right: 35px;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 450;
+}

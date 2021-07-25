@@ -1,0 +1,126 @@
+.carousel-img{
+    width: 100%;
+    height: 650px;
+}
+
+.carousel-caption h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.cart-button{
+    display: flex;
+    left: 1200px;
+    top: 550px;
+    justify-content: center;
+    width: 150px;
+    z-index: 1000;
+    position: fixed;
+}
+
+.cart-button button{
+    background-color: #E98219;
+}
+
+.col-lg-6 img{
+    width: 100%;
+}
+
+.about{
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-traditional-chinese-style-cloud-background-design-culturechinese-stylecloud-backgroundadvertising-image_66529.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 674px;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+}
+
+.wrapper{
+    border: 1px solid rgb(138, 135, 135);
+    height: 100%;
+    padding: 30px 30px 30px 30px;
+}
+
+.wrapper h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.wrapper p{
+    font-size: 18px;
+    line-height: 2;
+}
+
+.wrapper mat-icon{
+    font-size: 50px;
+}
+
+.favorite{
+    text-align: center;
+    background-color: rgb(255, 244, 225);
+    padding: 30px 0 20px 0;
+}
+
+.product img{
+    width: 100%;
+}
+
+.wrap{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.product{
+    border: 1px solid rgb(165, 165, 165);
+    flex-grow: 1;
+    padding-left: 0;
+    padding-right: 0;
+    width: 200px;
+    margin-left: 30px;
+    background-color: white;
+}
+
+.product p{
+    margin-top: 10px;
+    color: #E98219;
+    font-weight: bold;
+}
+
+.favorite mat-icon{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.favorite h1{
+    font-size: 36px;
+    font-weight: bold;
+    color: #E98219;
+}
+
+.product:hover{
+    border: 2px solid #E98219;
+    cursor: pointer;
+}
+
+.deal{
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-traditional-chinese-style-cloud-background-design-culturechinese-stylecloud-backgroundadvertising-image_66529.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 650px;
+    text-align: center;
+    padding: 20px 20px 20p0 20px;
+}
+
+.deal h2{
+    color: red;
+}
+
+.pointer{
+    font-size: 25px !important;
+}
+
+.footer{
+    position: absolute;
+    top: 550px;
+    left: 165px
+}

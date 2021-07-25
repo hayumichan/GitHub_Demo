@@ -1,0 +1,67 @@
+<div style="text-align: center">
+    <h1>Cập nhật tiền mặt cuối ngày</h1>
+    <p><i>{{date}}</i></p>
+    <form [formGroup]="formUpdateCash" (ngSubmit)="onSubmit()">
+        <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 500k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="500k" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 200k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="200k" type="number">
+        </mat-form-field>
+        </div>
+        <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 100k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="100k" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 50k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="50k" type="number">
+        </mat-form-field>
+        </div>
+        <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 20k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="20k" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 10k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="10k" type="number">
+        </mat-form-field>
+        </div>
+        <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 5k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="5k">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 2k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="2k">
+        </mat-form-field>
+        </div>
+        <div class="row">
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 1k</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="1k">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="col-lg-6">
+            <mat-label>Nhập số tờ 500</mat-label>
+            <input matInput autocomplete="off"
+                formControlName="500">
+        </mat-form-field>
+        </div>
+        <button type="submit" class="login">Lưu</button><br>
+    </form>
+</div>

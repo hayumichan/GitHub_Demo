@@ -1,0 +1,56 @@
+<div class="cart-button">
+    <button mat-fab [matBadge]="cartItem" matBadgePosition="before" matBadgeColor="accent" routerLink="/home/gio-hang">
+        <mat-icon>local_grocery_store</mat-icon>
+    </button>
+</div>
+<div class="wrapper">
+    <div class="menu">
+        <h1>Thực đơn</h1>
+        <mat-icon>restaurant</mat-icon>
+        <div class="filter">
+            <button class="btn" style="flex-grow: 1;">Phở</button>
+            <button class="btn" style="flex-grow: 1;">Combo</button>
+            <button class="btn" style="flex-grow: 1;">Lẩu</button>
+            <button class="btn" style="flex-grow: 1;">Đồ uống</button>
+            <button class="btn" style="flex-grow: 1;">Khác</button>
+            <mat-form-field appearance="fill" style="flex-grow: 1; border-radius: 40px">
+                <mat-label>Sắp xếp theo</mat-label>
+                <mat-select>
+                    <mat-option value="nam">Mới nhất</mat-option>
+                    <mat-option value="nam">Bán chạy nhất</mat-option>
+                    <mat-option value="nu">Giá từ cao đến thấp</mat-option>
+                    <mat-option value="khac">Giá từ thấp đến cao</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <table style="margin-left: 65px; margin-bottom: 30px;">
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let item of products|display:row">
+                    <div class="item" (click)="chooseItem(item.getId())">
+                        <img [src]="item.getImg()">
+                        <p><b>{{item.getName()}}</b></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                    <span class="page-link">
+                        2
+                        <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<app-footer></app-footer>

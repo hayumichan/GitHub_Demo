@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="cart">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 style="text-align: left;">
+                    <mat-icon>shopping_cart</mat-icon><b>Giỏ hàng của bạn</b>
+                </h1>
+                <hr>
+                <table style="width: 100%">
+                    <tr *ngFor="let cart of carts">
+                        <td><img style="width: 60px;"
+                                [src]="cart.getImg()">
+                        </td>
+                        <td>{{cart.getProductName()}}</td>
+                        <td>
+                            <div class="form-check-inline">
+                                <button style="background-color: #E98219; color: white" class="btn" (click)="minus(cart.getProductId())">
+                                    <mat-icon>remove</mat-icon>
+                                </button>
+                            </div>
+                            <div class="form-check-inline">
+                                <input style="width: 70px;" type="number" class="form-control" [value]="cart.getQuantity()" disabled>
+                            </div>
+                            <div class="form-check-inline">
+                                <button style="background-color: #E98219; color: white" class="btn" (click)="plus(cart.getProductId())">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                            </div>
+                        </td>
+                        <td>{{cart.getPrice()*cart.getQuantity()|format}}</td>
+                        <td><button mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="removeItem(cart)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+                <!-- <button class="btn btn-danger" (click)="removeCart()"><mat-icon>remove</mat-icon> giỏ hàng</button> -->
+            </div>
+            <div class="col-lg-4 buy">
+                <h1 class="total">Tổng</h1>
+                <div class="form-group">
+                    <label for="comment"><b>Mã giảm giá</b></label>
+                    <input class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="comment"><b>Ghi chú</b></label>
+                    <textarea placeholder="Ví dụ: không hành, nhiều mì chính,...." class="form-control"
+                        rows="5"></textarea>
+                </div>
+                <div style="text-align: right">
+                    <h1><b>Tạm tính:</b></h1>
+                    <h2 style="color: red"><b>{{sum|format}}</b></h2>
+                </div>
+                <button class="btn" (click)="payment()">Đến thanh toán</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="fix">
+        <h1>Quản lý tài khoản</h1>
+        <div class="filter">
+            <p class="search"><span>
+                    <mat-icon>search</mat-icon>
+                </span>Tìm kiếm
+            </p>
+            <div class="row">
+                <mat-form-field appearance="fill" class="col-lg-4">
+                    <mat-label>Theo tên</mat-label>
+                    <input matInput placeholder="tunghv" autocomplete="off">
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="col-lg-4">
+                    <mat-label>Theo trạng thái</mat-label>
+                    <mat-select>
+                        <mat-option value="active">Đang hoạt động</mat-option>
+                        <mat-option value="inactive">Đang không hoạt động</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="col-lg-4">
+                    <mat-label>Theo vai trò</mat-label>
+                    <mat-select>
+                        <mat-option value="owner">Chủ sở hữu</mat-option>
+                        <mat-option value="manager">Quản lý</mat-option>
+                        <mat-option value="accountant">Kế toán</mat-option>
+                        <mat-option value="cashier">Thu ngân</mat-option>
+                        <mat-option value="waiter">Phục vụ</mat-option>
+                        <mat-option value="chef">Đầu bếp</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button type="submit" class="btnFilter">Tìm kiếm</button>
+            <hr>
+            <button mat-mini-fab class="button-add" (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <p class="ds">Danh sách tài khoản</p>
+        </div>
+    </div>
+    <div class="table">
+        <table class="table table-striped table-hover" style="text-align: center;">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Tên đăng nhập</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Vai trò</th>
+                <th scope="col">Thay đổi trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of account ; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{item.getUsername()}}</td>
+                <td>{{item.getCreatedDate()}}</td>
+                <td>{{item.getRole()}}</td>
+                <td><button class="btn" [ngClass]="{'btn-danger':!item.getDeleted(), 'btn-success':item.getDeleted()}" (click)="onDelete(item.getId())">{{item.getDeleted()?'ĐANG HOẠT ĐỘNG':'KHÔNG HOẠT ĐỘNG'}}</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="minusCurrentPage()">Trước</a></li>
+        <li class="page-item">
+            <p class="page-link">{{currentPage+1}}</p>
+        </li>
+        <li class="page-item"><a class="page-link" (click)="addCurrentPage()">Sau</a></li>
+      </ul>
+</div>
+

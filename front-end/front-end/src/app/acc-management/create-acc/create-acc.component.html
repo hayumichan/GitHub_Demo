@@ -1,0 +1,20 @@
+<div style="text-align: center">
+    <h1>Thêm tài khoản</h1>
+    <form [formGroup]="formCreateAcc" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>Nhập tên đăng nhập</mat-label>
+            <input matInput placeholder="tunghv@example.com" autocomplete="off" formControlName="username">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" color="white">
+            <mat-label>Nhập mật khẩu</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button type="submit" class="login">Thêm tài khoản</button><br>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+<div style="text-align: center">
+    <h1 *ngIf="data.edit">Sửa cơ sở vật chất</h1>
+    <h1 *ngIf="!data.edit">Thêm cơ sở vật chất</h1>
+    <form [formGroup]="formModifyInfrastructure" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-6">
+                <mat-label>Nhập tên cơ sở vật chất</mat-label>
+                <input matInput autocomplete="off" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-6">
+                <mat-label>Nhập số lượng</mat-label>
+                <input matInput autocomplete="off" formControlName="quantity" type="number">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-6">
+                <mat-label>Chọn ngày nhập</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="importDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-6">
+                <mat-label>Nhập tổng giá</mat-label>
+                <input matInput autocomplete="off" formControlName="price" type="number">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="fill" class="col-lg-6">
+                <mat-label>Nhập nhà cung cấp</mat-label>
+                <input matInput autocomplete="off" formControlName="supplier">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-lg-6">
+                <mat-label>Nhập khấu hao</mat-label>
+                <input matInput autocomplete="off" formControlName="depreciation" type="number">
+                <span matSuffix>Tháng</span>
+            </mat-form-field>
+        </div>
+        <button type="submit" class="login">Lưu</button><br>
+    </form>
+</div>

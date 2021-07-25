@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="fix">
+    <h1>Quản lý cơ sở vật chất</h1>
+    <div class="filter">
+      <div class="row">
+        <p class="search col-lg-2"><span>
+            <mat-icon>search</mat-icon>
+          </span>Tìm kiếm:
+        </p>
+        <mat-form-field appearance="fill" class="col-lg-8">
+          <mat-label>Theo tên</mat-label>
+          <input matInput placeholder="tunghv" autocomplete="off">
+        </mat-form-field>
+        <div class="col-lg-2" style="text-align: right;">
+          <button mat-raised-button type="submit" class="btnFilter">Tìm kiếm</button>
+        </div>
+      </div>
+      <hr>
+      <button mat-mini-fab class="button-add" (click)="openAddInfraDialog()">
+        <mat-icon>add</mat-icon>
+      </button>
+      <p class="ds">Danh sách cơ sở vật chất</p>
+    </div>
+  </div>
+  <div class="table">
+    <table class="table table-striped table-hover" style="text-align: center;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Tên cơ sở vật chất</th>
+          <th scope="col">Số lượng</th>
+          <th scope="col">Ngày nhập</th>
+          <th scope="col">Tổng giá</th>
+          <th scope="col">Nhà cung cấp</th>
+          <th scope="col">Khấu hao</th>
+          <th scope="col">Xóa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of infraList ; let i = index" (click)="openEditInfraDialog(item)">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.importDate}}</td>
+          <td>{{item.price | format}}</td>
+          <td>{{item.supplier}}</td>
+          <td>{{item.depreciation}}</td>
+          <td (click)="deleteInfra(item.id)">
+            <mat-icon>delete</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" (click)="minusCurrentPage()">Trước</a></li>
+    <li class="page-item"><a class="page-link" (click)="addCurrentPage()">Sau</a></li>
+  </ul>
+</div>

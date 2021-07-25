@@ -1,0 +1,24 @@
+.hide-bg{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+app-header{
+    width: 100%;
+    z-index: 1000;
+}
+
+mat-drawer{
+    width: 20%;
+}
+
+mat-drawer-container{
+    height: 90%;
+}
+
+@media only screen and (max-width: 768px){
+    mat-drawer{
+        width: 40%;
+    }
+}

@@ -1,0 +1,13 @@
+<div style="text-align: center">
+    <h1>Cấp tài khoản cho nhân viên</h1>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Nhập tên đăng nhập</mat-label>
+            <input matInput placeholder="tunghv@example.com" autocomplete="off" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+        <button type="submit" class="login" (click)="addEmp()">Thêm nhân viên</button><br>
+    </form>
+</div>
+
+

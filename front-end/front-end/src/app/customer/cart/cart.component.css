@@ -1,0 +1,54 @@
+.wrapper{
+    padding: 20px 30px 20px 30px;
+    width: 100%;
+    background-color: rgb(255, 245, 227);
+}
+
+.cart{
+    border: 1px solid rgb(167, 167, 167);
+    text-align: center;
+    padding: 20px 50px 20px 50px;
+}
+
+tr{
+    height: 90px
+}
+
+.form-check-inline button{
+    height: 35px;
+    width: 35px;
+    text-align: center;
+}
+
+.form-check-inline mat-icon{
+    margin-top: -1px; 
+    margin-left: -6px
+}
+
+.buy{
+    border: 1px solid rgb(167, 167, 167);
+    padding: 20px 20px 20px 20px;
+    text-align: left;
+    background-color: white;
+}
+
+.total{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.buy button{
+    width: 100%;
+    border-radius: 30px;
+    background-color: #E98219;
+    color: white;
+}
+
+.buy button:hover{
+    background-color: #c46200;
+}
+
+input:disabled{
+    background-color: white;
+}
